@@ -1,14 +1,24 @@
-import "./App.css";
-import Navbar from '../Navbar'
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
 
-function App() {
+import Sidebar from "../Sidebar";
+import Content from "../Content";
+import Navbar from "../Navbar";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+  },
+}));
+
+export default function App() {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-      <Navbar/>
+    <div className={classes.root}>
+      <Navbar />
+      <Content />
+      <Sidebar />
     </div>
   );
 }
-
-export default App;
